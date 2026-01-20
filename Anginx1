@@ -1,0 +1,15 @@
+server {
+    listen 80;
+    server_name reavex.duckdns.org;
+
+    location / {
+        root /var/www/mahoot;
+        index index.html;
+    }
+
+    location /api/ {
+        proxy_pass http://localhost:3001/;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+    }
+}
