@@ -1,0 +1,13 @@
+<script>
+async function register() {
+  await fetch("/api/register", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({
+      username: ruser.value,
+      email: remail.value,
+      password: rpass.value
+    })
+  });
+}
+</script>
